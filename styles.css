@@ -1,0 +1,328 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    background-image: url('hero-image.png'); /* Use the path to your hero image */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+/*
+.hero {
+    background-image: url('hero-image.png');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    min-height: 100px;
+}
+*/
+.hero * {
+    opacity: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/*
+.hero h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+}*/
+
+nav {
+    background-color: #f4a460;
+    padding: 0.1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0.5rem;
+    display: block;
+    line-height: 2;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #8b5922;
+    color: #fff;
+}
+
+.github-link {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    background-color: #3a3a3a;
+    border-radius: 8px;
+}
+
+section h2 {
+    color: #f4a460;
+    text-align: center;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.feature-item {
+    flex: 1 1 calc(45% - 2rem);
+    background-color: #4a4a4a;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: #f4a460;
+}
+
+.feature-item h3 {
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+.feature-item p {
+    color: #ddd;
+}
+
+.feature-item.highlight {
+    border: 2px solid #f4a460;
+    box-shadow: 0 0 10px #f4a460;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.video-container {
+    text-align: center;
+}
+
+.video-container iframe {
+    max-width: 100%;
+}
+
+.tutorial-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.tutorial-link a {
+    color: #f4a460;
+    text-decoration: none;
+}
+
+.tutorial-link a:hover {
+    text-decoration: underline;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #f4a460;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.kofi-link, .discord-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #f4a460;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1024px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 100%;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+/*
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+*/
+    .github-link {
+        font-size: 1rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 1rem 0.5rem;
+    }
+}

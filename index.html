@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering Tiger</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Whispering Tiger</h1>
+            <p>Your all-in-one transcription and translation solution</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#support">Support the Project</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+        <a href="https://github.com/Sharrnah/whispering-ui" target="_blank" class="github-link">
+            <i class="fab fa-github"></i>
+        </a>
+    </header>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature-item highlight">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Runs Locally</h3>
+                <p>All processing is done locally, ensuring privacy and speed.</p>
+            </div>
+            <div class="feature-item highlight">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Easy-to-use UI</h3>
+                <p>Intuitive interface that simplifies configuration to maximize performance on your hardware.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comments"></i>
+                <h3>Real-time Translation</h3>
+                <p>Translate speech in near real-time<br>with minimal delay.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Speech-to-Text</h3>
+                <p>Accurate and fast transcriptions.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-language"></i>
+                <h3>Text Translation</h3>
+                <p>Translate text automatically.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comment"></i>
+                <h3>Text-to-Speech</h3>
+                <p>Many Text-to-Speech engines supported.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-image"></i>
+                <h3>Image-to-Text</h3>
+                <p>Extract text from images effortlessly<br>and translate it even in-game</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-plug"></i>
+                <h3>Plugin Support</h3>
+                <p>Extend functionality with many plugins.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Whispering Tiger</h2>
+        <p>Whispering Tiger is your all-in-one application for speech-to-text, text-to-text, image-to-text, and more.</p>
+        <p>It is an open-source project, welcoming contributions from developers worldwide.</p>
+    </section>
+
+    <section id="screenshots">
+        <h2>Screenshots</h2>
+        <div class="gallery">
+            <img src="speech2text.png" data-full="speech2text.png" alt="Speech-to-Text Tab" class="gallery-item">
+            <img src="ocr.png" data-full="ocr.png" alt="Optical Character Recognition" class="gallery-item">
+            <img src="profile-selection.png" data-full="profile-selection.png" alt="Settings Profiles" class="gallery-item">
+        </div>
+    </section>
+
+    <section id="download">
+        <h2>Download Whispering Tiger</h2>
+        <p>Click the button below to download the latest version of Whispering Tiger.</p>
+        <p><a href="https://github.com/Sharrnah/whispering-ui/releases/download/v1.2.1.1/whispering-tiger-ui-1.2.1.1.zip" target="_blank" class="download-link">Download Now</a></p>
+    </section>
+
+    <section id="video">
+        <h2>Watch our Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HSGqQuGDFmU" frameborder="0" allowfullscreen></iframe>
+            <p class="tutorial-link"><a href="https://www.youtube.com/watch?v=VNh6lFdQC70" target="_blank">Watch the tutorial video</a></p>
+        </div>
+    </section>
+
+    <section id="support">
+        <h2>Support the Project</h2>
+        <p>If you like Whispering Tiger and want to support its development, consider buying us a coffee!</p>
+        <p><a href="https://ko-fi.com/sharrnah" target="_blank" class="kofi-link">Support on Ko-Fi</a></p>
+    </section>
+
+    <section id="community">
+        <h2>Community Support</h2>
+        <p>Join our community on Discord for support and discussions.</p>
+        <p><a href="https://discord.gg/V7X6xa2B2v" target="_blank" class="discord-link">Join Discord</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Whispering Tiger. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
