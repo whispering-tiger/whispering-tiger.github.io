@@ -276,6 +276,10 @@ footer p {
     cursor: pointer;
 }
 
+.center {
+    text-align: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .feature-item {
