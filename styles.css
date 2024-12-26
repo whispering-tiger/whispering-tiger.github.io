@@ -148,6 +148,9 @@ section h2 {
 .feature-item p {
     color: #ddd;
 }
+.feature-item p:last-child {
+    margin-block-end: 0;
+}
 
 .feature-item.highlight {
     border: 2px solid #f4a460;
