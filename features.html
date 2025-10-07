@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whispering Tiger – Detailed Features</title>
+    <meta name="description" content="In-depth feature list for Whispering Tiger: local speech recognition, translation, TTS, OCR, automation, plugins and more." />
+    <link rel="canonical" href="https://whispering-tiger.github.io/features.html" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:title" content="Whispering Tiger – Detailed Features" />
+    <meta property="og:description" content="Explore the full capabilities of Whispering Tiger: ASR, translation, OCR, TTS, monitoring, plugins and workflow automation." />
+    <meta property="og:image" content="https://whispering-tiger.github.io/hero-image.png" />
+    <meta property="og:url" content="https://whispering-tiger.github.io/features.html" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Whispering Tiger – Detailed Features" />
+    <meta name="twitter:description" content="Explore the full capabilities of Whispering Tiger: ASR, translation, OCR, TTS, monitoring, plugins and workflow automation." />
+    <meta name="twitter:image" content="https://whispering-tiger.github.io/hero-image.png" />
+</head>
+<body>
+<header>
+    <div class="hero">
+        <h1>Whispering Tiger</h1>
+        <p>Detailed Feature Overview</p>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="features.html" class="active">Detailed Features</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#download">Download</a></li>
+            <li><a href="index.html#support">Support the Project</a></li>
+            <li><a href="index.html#community">Community</a></li>
+        </ul>
+    </nav>
+    <a href="https://github.com/Sharrnah/whispering-ui" target="_blank" class="github-link" aria-label="GitHub Repository">
+        <i class="fab fa-github"></i>
+    </a>
+</header>
+
+<section id="overview">
+    <h2>At a Glance</h2>
+    <p class="center">Whispering Tiger unifies <strong>Speech Recognition</strong>, <strong>Real-time & Batch Translation</strong>, <strong>Text-to-Speech</strong>, <strong>Image / Screen OCR</strong>, <strong>In-Game Text Monitoring</strong>, and a rich <strong>Plugin & Automation</strong> system – all running locally for privacy and performance.</p>
+    <div class="quick-links">
+        <span>Jump to:</span>
+        <a href="#languages">Languages</a>
+        <a href="#asr">Speech Recognition</a>
+        <a href="#translation">Translation</a>
+        <a href="#tts">Text-to-Speech</a>
+        <a href="#ocr">OCR & Screen Monitoring</a>
+        <a href="#automation">Automation & Plugins</a>
+        <a href="#performance">Performance</a>
+        <a href="#workflow">Workflow Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+    </div>
+</section>
+
+<section id="languages">
+    <h2>Supported Languages</h2>
+    <details open>
+        <summary><strong>General Coverage</strong></summary>
+        <p>Depending on the selected models, Whispering Tiger can understand or translate between <strong>100 to 200+ languages</strong>. Coverage varies per model family (see sections below). Many pipelines allow language autodetection.</p>
+        <ul>
+            <li><strong>ASR (Speech-to-Text):</strong> Typical Whisper-family models cover ~99 languages; with support to translate to English. Other models already support translation directly to other languages as well.</li>
+            <li><strong>Text Translation:</strong> Multi-lingual models (e.g. NLLB-200, M2M100) reach 200 languages; With local Large-Language Models (LLMs) with high translation accuracy.</li>
+            <li><strong>TTS:</strong> Many Engines; some offer dozens of voices across 100+ languages, others focus on a single language. With some even supporting voice cloning with a short audio sample.</li>
+            <li><strong>OCR:</strong> OCR backends (e.g. Easy OCR, GOT OCR 2.0, Phi-4 or Tesseract via plugin) support large multilingual sets.</li>
+        </ul>
+    </details>
+</section>
+
+<section id="asr">
+    <h2>Speech Recognition (ASR)</h2>
+    <details open>
+        <summary><strong>Supported Model Families</strong></summary>
+        <ul>
+            <li>Whisper original (multiple sizes: tiny → large-v3)</li>
+            <li>Transformer-Whisper (Supporting Flash-Attention)</li>
+            <li>Faster-Whisper / CTranslate2 optimized variants</li>
+            <li>With support for custom user-provided models</li>
+            <li>Seamless M4T</li>
+            <li>MMS</li>
+            <li>Speech T5</li>
+            <li>Wav2Vec Bert 2.0</li>
+            <li>NeMo Canary</li>
+            <li>Phi-4 (LLM)</li>
+            <li>Voxtral (LLM)</li>
+            <li>+ Cloud Models like OpenAI, Google, etc. via Plugins</li>
+        </ul>
+        <p>UI lets you pick size vs accuracy, precision / quantization, used hardware device and VAD (voice activity detection) options.</p>
+    </details>
+    <details>
+        <summary><strong>Features</strong></summary>
+        <ul>
+            <li>Real-time streaming or batch file transcription</li>
+            <li>Automatic language detection</li>
+            <li>Timestamped segments with optional word-level timing (when backend supports it)</li>
+            <li>Customizable VAD sensitivity and chunk parameters</li>
+            <li>Segment post-processing (casing, punctuation, number formatting)</li>
+            <li>On-the-fly translation (transcribe + translate to target)</li>
+            <li>Profile-based hardware tuning (threads, GPU, fp16/int8/4-bit quantization)</li>
+            <li>Subtitle generation and translation (SRT, VTT, etc.)</li>
+        </ul>
+    </details>
+</section>
+
+<section id="translation">
+    <h2>Text & Speech Translation</h2>
+    <details open>
+        <summary><strong>Model Backends</strong></summary>
+        <ul>
+            <li>NLLB-200 + CTranslate2 optimized with (200 languages)</li>
+            <li>M2M100 (100 languages)</li>
+            <li>Seamless M4T (101 languages)</li>
+            <li>Phi-4 (23 languages)</li>
+            <li>Voxtral (13 languages)</li>
+            <li>+ Cloud Models like DeepL, OpenAI, Google, etc. via Plugins</li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Capabilities</strong></summary>
+        <ul>
+            <li>Translation of text files or clipboard contents</li>
+            <li>Real-time speech → text → translated text workflow</li>
+            <li>Chained pipelines: ASR → MT → TTS for spoken output</li>
+            <li>Automatic source language detection & fallback strategies</li>
+        </ul>
+    </details>
+</section>
+
+<section id="tts">
+    <h2>Text-to-Speech (TTS) & Voice</h2>
+    <details open>
+        <summary><strong>Engines / Approaches</strong></summary>
+        <ul>
+            <li>Silero (fast, CPU-friendly, multilingual)</li>
+            <li>Kokoro (fast, high-quality, multilingual)</li>
+            <li>F5/E2 (high-quality, expressive TTS with voice-cloning)</li>
+            <li>Zonos (high-quality, expressive TTS with voice-cloning and many languages)</li>
+            <li>Orpheus (high-quality, expressive TTS with voice-cloning)</li>
+            <li>+ Plugins for more TTS options
+                <ul>
+                    <li><hr />Bark with expressive generation</li>
+                    <li>Coqui TTS (neural multi-speaker models)</li>
+                    <li>Voice Conversion / Cloning plugins (RVCv2)</li>
+                    <li>Cloud Models like OpenAI, Google etc.</li>
+                </ul>
+            </li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Features</strong></summary>
+        <ul>
+            <li>Selectable voice, speed, pitch (engine dependent)</li>
+            <li>Text normalization & sentence splitting</li>
+            <li>Streamed audio generation for faster playback</li>
+            <li>Audio output device selection for multiple devices without the need of VoiceMeeter</li>
+            <li><em>For output into voice-chat applications like Games, a virtual audio device is required</em></li>
+        </ul>
+    </details>
+</section>
+
+<section id="ocr">
+    <h2>Image / Screen OCR</h2>
+    <details open>
+        <summary><strong>OCR Backends</strong></summary>
+        <ul>
+            <li>Easy OCR (fast & accurate for many scripts)</li>
+            <li>GOT OCR 2.0 (accurate for many scripts and complicated layouts)</li>
+            <li>Phi-4 (accurate for many scripts and complicated layouts with Large-Language-Model)</li>
+            <li>Tesseract <em>(if plugin installed)</em></li>
+            <li>Game / screen region capture overlays</li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Capabilities</strong></summary>
+        <ul>
+            <li>Configurable screen area polling</li>
+            <li>Automatic text translation of OCR results</li>
+            <li>Overlay and subtitle-mode output</li>
+            <li>Text-to-Speech playback of translated lines</li>
+            <li>Filtering & deduplication of repeated frames</li>
+            <li>Logged transcripts for later review</li>
+        </ul>
+    </details>
+</section>
+
+
+<section id="automation">
+    <h2>Automation & Plugins</h2>
+    <details open>
+        <summary><strong>Plugin System</strong></summary>
+        <p>Extend core capabilities without modifying the base application.</p>
+        <ul>
+            <li>Install / update / remove inside the UI</li>
+            <li>Easy Plugin API (see <a target="_blank" rel="noopener" href="https://github.com/Sharrnah/whispering-plugins/blob/main/Documentation/plugin-creation.md">plugin documentation</a>)</li>
+            <li>Extensive Plugin Configuration UI</li>
+            <li>Events (stt, tts, sts and further custom plugin events like on_plugin_tts, on_audio_processor etc.)</li>
+            <li>Access to application, model & pipeline configuration</li>
+            <li>Fast Audio processing Functions usable by Plugins like resampling, normalization, etc.</li>
+            <li>Community-driven enhancements (see <a target="_blank" rel="noopener" href="https://github.com/Sharrnah/whispering-plugins/blob/main/README.md">plugin list</a>)</li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Automation Features</strong></summary>
+        <ul>
+            <li>Profiles for different tasks (gaming, meetings, game translation etc.)</li>
+            <li>Custom hotkeys (start/stop, push-to-talk)</li>
+            <li>Auto model download</li>
+            <li>Update management for installed plugins</li>
+        </ul>
+    </details>
+</section>
+
+<section id="performance">
+    <h2>Performance & Optimization</h2>
+    <details open>
+        <summary><strong>Acceleration & Efficiency</strong></summary>
+        <ul>
+            <li>GPU acceleration (CUDA, CPU, with possible ROCm support in the future)</li>
+            <li>Mixed precision / fp16 inference</li>
+            <li>Quantized model support (int8 / 4-bit) for low VRAM systems</li>
+            <li>Thread & batch tuning per model</li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Resource Management</strong></summary>
+        <ul>
+            <li>On-demand model loading</li>
+            <li>Disk cache for reused weights</li>
+            <li>Offline mode as main focus with optional Plugins for online functionality</li>
+        </ul>
+    </details>
+</section>
+
+<section id="workflow">
+    <h2>User Workflow Features</h2>
+    <details open>
+        <summary><strong>Interface & Usability</strong></summary>
+        <ul>
+            <li>Tabbed UI for distinct tasks (ASR, Translation, TTS, OCR)</li>
+            <li>Central YAML Configuration file for easy sharing & collaboration (make sure to exclude sensitive information when sharing)</li>
+            <li>Dark theme focused on readability</li>
+            <li>Status indicators</li>
+            <li>Websocket support for integration into other applications like Streaming software or Virtual Reality overlays</li>
+            <li>VRChat Support via OSC</li>
+        </ul>
+    </details>
+    <details>
+        <summary><strong>Output & Export</strong></summary>
+        <ul>
+            <li>Subtitle formats (SRT / VTT) <em>(when plugin enabled)</em></li>
+            <li>Plain text transcripts</li>
+            <li>Timestamp annotation</li>
+            <li>HTML files with integration for overlays and other use cases</li>
+        </ul>
+    </details>
+</section>
+
+<section id="privacy">
+    <h2>Privacy & Local-First Design</h2>
+    <details open>
+        <summary><strong>Key Principles</strong></summary>
+        <ul>
+            <li>All processing can run fully offline</li>
+            <li>No audio/text sent to external servers unless a plugin explicitly does so (clearly indicated)</li>
+            <li>User-controlled model and cache directories</li>
+            <li>Transparent logs; easy to audit behavior</li>
+            <li>Optional Error Reporting to help improve the system with user selective attached information</li>
+        </ul>
+    </details>
+</section>
+
+<section id="faq">
+    <h2>FAQ & Notes</h2>
+    <details open>
+        <summary><strong>Is this list exhaustive?</strong></summary>
+        <p>No. New plugins, models and features appear frequently. For the freshest additions check the GitHub repositories and plugin index.</p>
+    </details>
+    <details>
+        <summary><strong>Performance varies?</strong></summary>
+        <p>Yes. Model size, hardware (CPU/GPU), quantization, and concurrent tasks all influence throughput and latency. Profiles help tune these.</p>
+    </details>
+    <details>
+        <summary><strong>Where to report issues?</strong></summary>
+        <p>Open an issue on the main UI repository on <a href="https://github.com/Sharrnah/whispering-ui" target="_blank">GitHub</a>, Join the <a href="https://discord.gg/V7X6xa2B2v" target="_blank">Discord server</a><br />or send a report using the in-app feedback tool.</p>
+    </details>
+</section>
+
+<section id="footnote">
+    <p style="font-size:0.8rem; text-align:center; opacity:0.8;">Model names & capabilities are provided for orientation only. Refer to each model's own license & repository for authoritative details.</p>
+    <p class="center"><a href="#overview">Back to top</a> · <a href="index.html">Return Home</a></p>
+</section>
+
+<footer>
+    <p>&copy; <span id="year"></span> Whispering Tiger Project. Open Source Driven.</p>
+</footer>
+
+<script>
+    // Simple dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

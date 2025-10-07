@@ -38,17 +38,13 @@ header {
     text-align: center;
     color: white;
 }
-/*
-.hero {
-    background-image: url('hero-image.png');
-    background-size: cover;
-    background-position: center;
-    padding: 4rem 1rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    min-height: 100px;
+
+/* Minimal variant for secondary pages */
+.minimal-hero {
+    height: 220px;
+    background-position: center top;
 }
-*/
+
 .hero * {
     opacity: 0;
     -webkit-user-select: none; /* Safari */
@@ -94,6 +90,12 @@ nav ul li a {
     transition: background-color 0.3s, color 0.3s;
 }
 
+nav ul li a.active {
+    background-color: #8b5922;
+    color: #fff;
+    border-radius: 4px;
+}
+
 nav ul li a:hover {
     background-color: #8b5922;
     color: #fff;
@@ -116,9 +118,61 @@ section {
 }
 
 section h2 {
-    color: #f4a460;
     text-align: center;
 }
+/* Quick links bar */
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+.quick-links span { flex-basis: 100%; text-align: center; opacity: 0.8; }
+.quick-links a {
+    background: #4a4a4a;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #f4a460;
+    transition: background 0.2s;
+}
+.quick-links a:hover { background:#5a5a5a; }
+
+/* Details / summary accordion styling */
+summary {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-left: 1.2rem;
+}
+summary::-webkit-details-marker { display: none; }
+summary:before {
+    content: '\25BA'; /* right-pointing triangle */
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    font-size: 0.8rem;
+    transition: transform 0.25s;
+}
+details[open] summary:before { transform: rotate(90deg); }
+
+details {
+    background: #444;
+    margin: 0.75rem 0 1rem;
+    padding: 0.8rem 0.9rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+
+details p, details ul { margin-top: 0.6rem; }
+
+details ul li { margin-bottom: 0.35rem; }
+
+details summary { font-weight: 600; }
+
+details summary:focus { outline: 2px solid #f4a460; outline-offset: 2px; }
 
 .feature-list {
     display: flex;
@@ -302,6 +356,8 @@ footer p {
         height: 300px;
     }
 
+    .minimal-hero { height: 160px; }
+
 /*
     .hero h1 {
         font-size: 2rem;
@@ -333,4 +389,6 @@ footer p {
     footer {
         padding: 1rem 0.5rem;
     }
+
+    .quick-links a { font-size: 0.75rem; }
 }
