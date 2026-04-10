@@ -80,7 +80,15 @@
                 </ul>
                 <p>This makes it easy to build advanced workflows like <em>ASR → Translation → TTS → Tiger Voice Pro</em> for complete cross-language character dubbing – fully on your own machine.</p>
             </details>
-            <div id="waveform"><!-- example --></div>
+            <div id="voice-compare">
+                <div id="waveform"></div>
+                <div class="voice-compare-controls">
+                    <button id="vc-play" class="btn-primary" style="padding:0.4rem 0; font-size:0.85rem; width:2.6rem; display:inline-flex; justify-content:center; align-items:center;"><i class="fas fa-play"></i></button>
+                    <span class="vc-label">Original</span>
+                    <input type="range" id="vc-mix" min="0" max="100" value="100" />
+                    <span class="vc-label">Changed</span>
+                </div>
+            </div>
             <p class="pro-plugin-meta">Version: <span class="badge badge-status">v1.0.0</span></p>
             <div class="pro-plugin-get-wrapper">
                 <p class="pro-plugin-get-label">Get Tiger Voice Pro now from:</p>
@@ -123,13 +131,64 @@
 <script type="text/javascript">
     const wavesurfer = WaveSurfer.create({
         container: '#waveform',
-        waveColor: '#f4a460',
-        progressColor: '#8b5922',
-        url: '/pro-plugins/tiger-voice-pro/Documentary-Host_vc.mp3',
+        url: '/pro-plugins/tiger-voice-pro/example-both.mp3',
+        splitChannels: [
+            { waveColor: '#888', progressColor: '#555', height: 48 },
+            { waveColor: '#f4a460', progressColor: '#8b5922', height: 48 },
+        ],
+        cursorColor: '#f4d2a0',
+        cursorWidth: 2,
     });
-    wavesurfer.on('interaction', () => {
-        wavesurfer.play()
-    })
+
+    let audioCtx, splitter, gainL, gainR, merger, sourceNode;
+
+    wavesurfer.on('ready', () => {
+        const media = wavesurfer.getMediaElement();
+        if (!media || audioCtx) return;
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        sourceNode = audioCtx.createMediaElementSource(media);
+        splitter = audioCtx.createChannelSplitter(2);
+        gainL = audioCtx.createGain();
+        gainR = audioCtx.createGain();
+        merger = audioCtx.createChannelMerger(1);
+
+        sourceNode.connect(splitter);
+        splitter.connect(gainL, 0);
+        splitter.connect(gainR, 1);
+        gainL.connect(merger, 0, 0);
+        gainR.connect(merger, 0, 0);
+        merger.connect(audioCtx.destination);
+
+        // Default: fully "Changed" (right channel)
+        gainL.gain.value = 0;
+        gainR.gain.value = 1;
+    });
+
+    const playBtn = document.getElementById('vc-play');
+    const mixSlider = document.getElementById('vc-mix');
+
+    playBtn.addEventListener('click', () => {
+        if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+        if (wavesurfer.isPlaying()) {
+            wavesurfer.pause();
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        } else {
+            wavesurfer.play();
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+    });
+
+    wavesurfer.on('finish', () => {
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    });
+
+    mixSlider.addEventListener('input', (e) => {
+        const val = e.target.value / 100;
+        if (gainL) gainL.gain.value = 1 - val;
+        if (gainR) gainR.gain.value = val;
+    });
+</script>
+    });
 </script>
 
 <script>

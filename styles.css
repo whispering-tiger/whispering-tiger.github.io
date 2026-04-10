@@ -420,6 +420,28 @@ details summary:focus { outline: 2px solid #f4a460; outline-offset: 2px; }
     vertical-align: middle;
 }
 
+#voice-compare {
+    margin: 1rem 0;
+}
+
+.voice-compare-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.vc-label {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    white-space: nowrap;
+}
+
+#vc-mix {
+    flex: 1;
+    accent-color: #f4a460;
+}
+
 .badge {
     display: inline-block;
     padding: 0.15rem 0.5rem;
