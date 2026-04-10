@@ -80,13 +80,13 @@
                 </ul>
                 <p>This makes it easy to build advanced workflows like <em>ASR → Translation → TTS → Tiger Voice Pro</em> for complete cross-language character dubbing – fully on your own machine.</p>
             </details>
-            <iframe width="456" height="100" src="https://www.youtube-nocookie.com/embed/vA6YAEiWk7o?rel=0&amp;showinfo=0&amp;controls=0" title="Tiger Voice Pro Example" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" style="max-width:100%;"></iframe>
+            <div id="waveform"><!-- example --></div>
             <p class="pro-plugin-meta">Version: <span class="badge badge-status">v1.0.0</span></p>
             <div class="pro-plugin-get-wrapper">
                 <p class="pro-plugin-get-label">Get Tiger Voice Pro now from:</p>
                 <div class="pro-plugin-get-buttons">
-                    <a href="https://ko-fi.com/s/6a94b5294a" target="_blank" class="cta-get btn-primary"><img src="kofi-icon.png" alt="" class="btn-store-icon" /> Ko-fi</a>
-                    <a href="https://sharrnah.booth.pm/items/7684190" target="_blank" class="cta-get btn-primary"><img src="booth-icon.png" alt="" class="btn-store-icon" /> Booth.pm</a>
+                    <a href="https://ko-fi.com/s/6a94b5294a" target="_blank" class="cta-get btn-primary"><img src="pro-plugins/kofi-icon.png" alt="" class="btn-store-icon" /> Ko-fi</a>
+                    <a href="https://sharrnah.booth.pm/items/7684190" target="_blank" class="cta-get btn-primary"><img src="pro-plugins/booth-icon.png" alt="" class="btn-store-icon" /> Booth.pm</a>
                 </div>
             </div>
         </div>
@@ -118,6 +118,19 @@
 <footer>
     <p>&copy; <span id="year"></span> Whispering Tiger Project. Open Source Driven.</p>
 </footer>
+
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script type="text/javascript">
+    const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#f4a460',
+        progressColor: '#8b5922',
+        url: '/pro-plugins/tiger-voice-pro/Documentary-Host_vc.mp3',
+    });
+    wavesurfer.on('interaction', () => {
+        wavesurfer.play()
+    })
+</script>
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
