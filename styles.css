@@ -389,6 +389,37 @@ details summary:focus { outline: 2px solid #f4a460; outline-offset: 2px; }
     opacity: 0.85;
 }
 
+.pro-plugin-get-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    float: right;
+}
+
+.pro-plugin-get-label {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.pro-plugin-get-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.pro-plugin-get-buttons .cta-get {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-store-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
 .badge {
     display: inline-block;
     padding: 0.15rem 0.5rem;
