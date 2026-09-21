@@ -531,6 +531,11 @@ a.download-link.btn-primary:hover {
     gap: 0.45rem;
 }
 
+.alternate-download {
+    margin-top: -0.45rem;
+    font-size: 0.85rem;
+}
+
 footer {
     background-color: #1a1a1a;
     text-align: center;

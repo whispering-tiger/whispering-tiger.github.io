@@ -122,7 +122,8 @@
     <section id="download">
         <h2>Download Whispering Tiger</h2>
         <p class="center">Click the button below to download the latest version of Whispering Tiger.</p>
-        <p class="center"><a href="https://github.com/Sharrnah/whispering-ui/releases/latest/download/whispering-tiger-ui-1.3.10.2.zip" target="_blank" class="download-link btn-primary" rel="noopener"><span class="download-icon"><i class="fas fa-download" aria-hidden="true"></i></span><span class="download-text">Download Now</span></a></p>
+        <p class="center"><a id="primary-download-link" href="https://github.com/Sharrnah/whispering-ui/releases/latest/download/whispering-tiger-ui-1.3.11.1-win.zip" target="_blank" class="download-link btn-primary" rel="noopener" data-windows-url="https://github.com/Sharrnah/whispering-ui/releases/latest/download/whispering-tiger-ui-1.3.11.1-win.zip" data-linux-url="https://github.com/Sharrnah/whispering-ui/releases/download/v1.3.11.1/whispering-tiger-ui-1.3.11.1-linux-amd64.zip"><span class="download-icon"><i class="fas fa-download" aria-hidden="true"></i></span><span id="primary-download-text" class="download-text">Download for Windows</span></a></p>
+        <p class="center alternate-download"><a id="alternate-download-link" href="https://github.com/Sharrnah/whispering-ui/releases/download/v1.3.11.1/whispering-tiger-ui-1.3.11.1-linux-amd64.zip" target="_blank" rel="noopener">Download for Linux instead</a></p>
     </section>
 
     <section id="video">
@@ -159,6 +160,18 @@
     <script>
         // Simple dynamic year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const primaryDownloadLink = document.getElementById('primary-download-link');
+        const primaryDownloadText = document.getElementById('primary-download-text');
+        const alternateDownloadLink = document.getElementById('alternate-download-link');
+        const platform = navigator.userAgentData?.platform || navigator.platform || navigator.userAgent;
+
+        if (/linux/i.test(platform)) {
+            primaryDownloadLink.href = primaryDownloadLink.dataset.linuxUrl;
+            primaryDownloadText.textContent = 'Download for Linux';
+            alternateDownloadLink.href = primaryDownloadLink.dataset.windowsUrl;
+            alternateDownloadLink.textContent = 'Download for Windows instead';
+        }
     </script>
     <script src="scripts.js"></script>
 </body>
