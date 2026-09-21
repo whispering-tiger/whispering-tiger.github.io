@@ -28,9 +28,9 @@ header {
 
 .hero {
     position: relative;
-    background-image: url('hero-image.png'); /* Use the path to your hero image */
-    background-size: cover;
-    background-position: center;
+    background-color: #16234d;
+    background-image: linear-gradient(180deg, #142e6b 0%, #16234d 52%, #362a5c 100%);
+    background-repeat: no-repeat;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -39,27 +39,37 @@ header {
     color: white;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1100px;
+    transform: translateX(-320px);
+    background: url('hero-image-v2.jpg') right center / auto 100% no-repeat;
+    -webkit-mask-image: linear-gradient(90deg, transparent 10%, #000 42%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 10%, #000 42%, #000 92%, transparent 100%);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 8, 6, 0.65) 0%, rgba(8, 8, 6, 0.25) 45%, transparent 68%);
+    pointer-events: none;
+}
+
 /* Minimal variant for secondary pages */
 .minimal-hero {
     height: 220px;
     background-position: center top;
 }
 
-/* Hero-Inhalt unsichtbar machen, aber Bereich beibehalten */
-.hero * {
-    opacity: 0;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 und IE 11 */
-    user-select: none; /* Standard-Syntax */
-}
-
-/* Download-Button im Hero trotz globaler Opacity sichtbar halten */
-.hero-download-button-wrapper,
-.hero-download-button-wrapper * {
-    opacity: 1;
-}
-
 .hero-inner {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -67,10 +77,29 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .hero-text {
+    max-width: 55%;
     text-align: left;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-shadow: 0 3px 22px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    max-width: 32rem;
+    margin: 1rem 0 0;
+    color: #f4c37f;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.4;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
 }
 
 .hero-download-wrapper {
@@ -80,6 +109,7 @@ header {
 /* Download-Button unten am Hero, bündig mit linkem Nav-Rand */
 .hero-download-button-wrapper {
     position: absolute;
+    z-index: 2;
     bottom: -0.75rem;
     left: 0;
     width: 100%;
@@ -93,17 +123,6 @@ header {
     margin-bottom: 0.1rem;
     pointer-events: auto;
 }
-
-/*
-.hero h1 {
-    margin: 0;
-    font-size: 3rem;
-}
-
-.hero p {
-    margin: 1rem 0 0;
-    font-size: 1.2rem;
-}*/
 
 nav {
     background-color: #f4a460;
@@ -631,15 +650,31 @@ footer p {
 
     .hero {
         height: 300px;
+        background-image: url('hero-image-v2.jpg'), linear-gradient(180deg, #142e6b 0%, #16234d 52%, #362a5c 100%);
+        background-size: cover, cover;
+        background-position: right top, center;
     }
 
+    .hero::before {
+        display: none;
+    }
+
+    .hero::after {
+        background: rgba(8, 8, 6, 0.58);
+    }
     .hero-inner {
+        position: absolute;
+        inset: 0 1rem;
+        width: auto;
         flex-direction: column;
+        justify-content: center;
         gap: 1rem;
-        padding: 0 1rem;
+        padding: 0;
     }
-
     .hero-text {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         text-align: center;
     }
 
@@ -659,15 +694,15 @@ footer p {
 
     .minimal-hero { height: 160px; }
 
-/*
     .hero h1 {
-        font-size: 2rem;
+        font-size: clamp(2.05rem, 10vw, 2.85rem);
+        line-height: 1;
+        overflow-wrap: anywhere;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
-*/
     .github-link {
         font-size: 1rem;
         top: 0.5rem;
