@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows &amp; Linux Setup, GPU Support | Whispering Tiger</title>
+    <meta name="description" content="Install Whispering Tiger on Windows or Linux. Compare CPU, NVIDIA CUDA and AMD/Intel Vulkan support, then set up microphone or desktop audio.">
+    <link rel="canonical" href="https://whispering-tiger.github.io/getting-started.html">
+    <link rel="preload" as="image" href="hero-image-v2.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:site_name" content="Whispering Tiger">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Windows &amp; Linux Setup, GPU Support | Whispering Tiger">
+    <meta property="og:description" content="Install Whispering Tiger on Windows or Linux. Compare CPU, NVIDIA CUDA and AMD/Intel Vulkan support, then set up microphone or desktop audio.">
+    <meta property="og:url" content="https://whispering-tiger.github.io/getting-started.html">
+    <meta property="og:image" content="https://whispering-tiger.github.io/hero-image-v2.jpg">
+    <meta property="og:image:width" content="1881">
+    <meta property="og:image:height" content="836">
+    <meta property="og:image:alt" content="Whispering Tiger artwork">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Windows &amp; Linux Setup, GPU Support | Whispering Tiger">
+    <meta name="twitter:description" content="Install Whispering Tiger on Windows or Linux. Compare CPU, NVIDIA CUDA and AMD/Intel Vulkan support, then set up microphone or desktop audio.">
+    <meta name="twitter:image" content="https://whispering-tiger.github.io/hero-image-v2.jpg">
+    <meta name="twitter:image:alt" content="Whispering Tiger artwork">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://whispering-tiger.github.io/getting-started.html#webpage",
+            "url": "https://whispering-tiger.github.io/getting-started.html",
+            "name": "Windows & Linux Setup, GPU Support | Whispering Tiger",
+            "description": "Install Whispering Tiger on Windows or Linux. Compare CPU, NVIDIA CUDA and AMD/Intel Vulkan support, then set up microphone or desktop audio.",
+            "inLanguage": "en",
+            "isPartOf": {
+                "@id": "https://whispering-tiger.github.io/#website"
+            },
+            "about": {
+                "@id": "https://whispering-tiger.github.io/#application"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Whispering Tiger",
+                    "item": "https://whispering-tiger.github.io/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Getting started",
+                    "item": "https://whispering-tiger.github.io/getting-started.html"
+                }
+            ]
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Getting started</h1>
+                <p>Whispering Tiger for Windows and Linux</p>
+            </div>
+        </div>
+        <div class="hero-download-button-wrapper">
+            <a href="index.html#download" class="hero-download-button"><span class="download-icon"><i class="fas fa-download" aria-hidden="true"></i></span><span class="download-text">Download Now</span></a>
+        </div>
+    </div>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="getting-started.html" class="active" aria-current="page">Getting started</a></li>
+            <li><a href="pro-plugins.html">Pro Plugins</a></li>
+        </ul>
+    </nav>
+    <a href="https://github.com/Sharrnah/whispering-ui" target="_blank" class="github-link" aria-label="GitHub Repository" rel="noopener">
+        <i class="fab fa-github"></i>
+    </a>
+</header>
+<main id="main">
+
+<section id="download">
+    <h2>Download and Install</h2>
+    <p>Get the Windows or Linux ZIP from the <a href="index.html#download">download section</a>. The desktop app is free. Extract it to a writable local folder with enough space for the backend and your selected models.</p>
+    <div class="quick-links"><a href="#windows">Windows</a><a href="#linux">Linux</a><a href="#hardware">Hardware</a><a href="#audio">Audio</a><a href="#offline">Offline use</a></div>
+</section>
+<section id="windows">
+    <h2>Windows</h2>
+    <ol>
+        <li>Extract the Windows ZIP. Do not start the app from inside the archive.</li>
+        <li>Run <code>Whispering Tiger.exe</code> and accept the backend platform download.</li>
+        <li>Create a profile, select your audio devices, then choose models and compute devices.</li>
+        <li>Start the profile. The selected models download on first use.</li>
+    </ol>
+    <p>Follow the release's CUDA requirements for NVIDIA models. audio.cpp with Vulkan uses the graphics driver and does not require CUDA.</p>
+</section>
+<section id="linux">
+    <h2>Linux</h2>
+    <p>The Linux download targets <strong>x86-64 with glibc 2.36+</strong>. The UI needs an OpenGL-capable X11/XWayland desktop and PulseAudio or PipeWire's PulseAudio compatibility service.</p>
+    <p>Extract the Linux ZIP, open a terminal in that folder, and run:</p>
+    <pre><code>chmod +x whispering-tiger-linux-amd64
+./whispering-tiger-linux-amd64</code></pre>
+    <p>Run as your normal desktop user. Accept the Linux backend download, then create a profile. The packaged CUDA backend includes its CUDA runtime libraries; GPU use still requires a compatible NVIDIA driver. audio.cpp offers CPU/Vulkan on Linux.</p>
+</section>
+<section id="hardware">
+    <h2>Which Hardware and Runtime Should I Use?</h2>
+    <p>Select a device separately for STT, translation, TTS and OCR. Support for one runtime does not imply support for all models.</p>
+    <section class="table-scroll" aria-label="Runtime support" tabindex="0">
+    <table>
+        <caption>Managed runtime support</caption>
+        <thead><tr><th scope="col">Runtime</th><th scope="col">Windows</th><th scope="col">Linux</th><th scope="col">Tasks</th></tr></thead>
+        <tbody>
+            <tr><th scope="row">audio.cpp (GGUF)</th><td>CPU, NVIDIA CUDA, AMD/Intel/NVIDIA Vulkan</td><td>CPU, AMD/Intel/NVIDIA Vulkan</td><td>Selected STT and TTS models</td></tr>
+            <tr><th scope="row">PyTorch / Transformers</th><td>CPU, NVIDIA CUDA for compatible models</td><td>CPU, NVIDIA CUDA for compatible models</td><td>STT, translation, TTS, OCR depending on model</td></tr>
+            <tr><th scope="row">CTranslate2</th><td>CPU, NVIDIA CUDA</td><td>CPU, NVIDIA CUDA</td><td>Faster Whisper, Faster NLLB-200</td></tr>
+        </tbody>
+    </table>
+    </section>
+    <p><strong>AMD/Intel:</strong> choose audio.cpp, a supported STT/TTS model, Vulkan and your GPU. Translation and OCR can use a different device, such as CPU. Vulkan needs a compatible driver, not the Vulkan SDK.</p>
+    <p><strong>Memory:</strong> start with a small model. STT, translation and TTS add their memory requirements when loaded together. Lower precision can reduce weight memory; speed and supported precisions depend on the runtime and device.</p>
+    <p>HIP/ROCm requires a custom audio.cpp server build and is not a managed UI option. DirectML is not an audio.cpp backend.</p>
+</section>
+<section id="audio">
+    <h2>Microphone, Game Audio and TTS</h2>
+    <p>For microphone transcription, select your input and test its level in the profile. For desktop audio, use WASAPI loopback on Windows or a PulseAudio/PipeWire monitor source on Linux.</p>
+    <p>To send TTS into VRChat or another voice-chat application, route it through a virtual audio device or Linux audio tools. Keep generated speech out of the input being transcribed to avoid a feedback loop.</p>
+    <ul>
+        <li><strong>Windows:</strong> select the virtual cable as Whispering Tiger's audio output and as the voice-chat app's microphone.</li>
+        <li><strong>Linux:</strong> send Whispering Tiger's output to a virtual sink and select its monitor as the voice-chat input, or connect the streams with PipeWire routing tools.</li>
+        <li><strong>Hear TTS yourself:</strong> enable <code>tts_use_secondary_playback</code> in Advanced &gt; Settings and choose your headphones as the secondary playback device.</li>
+    </ul>
+</section>
+<section id="offline">
+    <h2>Offline Use</h2>
+    <p>Download the backend, runtimes and selected models first. Local inference can then run offline. Online plugins need a connection and may send data to their provider. Some model options require manually supplied local weights; check the model instructions.</p>
+</section>
+<section id="tts">
+    <h2>Set Up Text-to-Speech</h2>
+    <ol>
+        <li>Choose the TTS type and compute device in your profile.</li>
+        <li>Open Text-to-Speech, select a model and voice, then generate a short test sentence.</li>
+        <li>For voice cloning, add a reference recording to the model's voice folder. Chatterbox, IndexTTS and audio.cpp use <code>.cache/chatterbox-tts-cache/voices</code>. F5 uses <code>.cache/f5tts-cache/voices</code>.</li>
+    </ol>
+    <p>F5 and audio.cpp OmniVoice cloning need a same-name UTF-8 <code>.txt</code> file containing the recording's transcript. Supported languages and voice controls depend on the model.</p>
+</section>
+<section id="integrations">
+    <h2>VRChat and Streaming Overlays</h2>
+    <p>For VRChat chatbox text, enable OSC in VRChat and use its address as the OSC destination in Whispering Tiger. On the same PC, that address is <code>127.0.0.1</code>. This sends text; spoken TTS uses the audio routing described above.</p>
+    <p>For streaming overlays, enable the WebSocket server and add an overlay HTML file from the backend's <code>websocket_clients</code> folder as a browser source in your streaming application. Keep the default local WebSocket address when both applications run on the same PC.</p>
+</section>
+<section id="realtime">
+    <h2>Realtime Transcription</h2>
+    <p>Enable realtime mode for intermediate results while you speak. Start with a small model and a supported GPU. If updates lag, use a smaller model or increase <code>realtime_frequency_time</code> in Advanced &gt; Settings to request updates less often.</p>
+    <p>Whisper-specific controls do not apply to every model. Use the profile's memory estimate to check whether your combined STT, translation and TTS models fit.</p>
+</section>
+<section id="plugins">
+    <h2>Install Plugins</h2>
+    <p>Use the app's plugin installer to browse and install extensions. Configure the installed plugin in the Plugins tab; its settings depend on the plugin.</p>
+    <p>For manual installation, place the plugin's <code>.py</code> file in the <code>Plugins</code> folder and restart the app.</p>
+</section>
+<section id="help">
+    <h2>Need More Help?</h2>
+    <p>Check the log under Advanced if a model fails to load or an audio device does not work. For help with your setup, visit <a href="index.html#community">community support</a>.</p>
+    <details>
+        <summary>Technical reference on GitHub</summary>
+        <p>These links open the source repositories:</p>
+        <ul>
+            <li><a href="https://github.com/Sharrnah/whispering-ui/blob/main/doc/documentations/integrated-tts.md" target="_blank" rel="noopener">TTS models and reference voices</a></li>
+            <li><a href="https://github.com/Sharrnah/whispering-ui/blob/main/doc/realtime-config.md" target="_blank" rel="noopener">Realtime settings</a></li>
+            <li><a href="https://github.com/Sharrnah/whispering/blob/main/documentation/faq.md" target="_blank" rel="noopener">Troubleshooting</a></li>
+        </ul>
+    </details>
+</section>
+
+</main>
+<footer>
+    <p>&copy; <span id="year">2026</span> Whispering Tiger Project.</p>
+    <p><a href="https://github.com/Sharrnah/whispering-ui">UI source</a> · <a href="https://github.com/Sharrnah/whispering">Backend source</a> · <a href="index.html#support">Support the project</a> · <a href="https://discord.gg/V7X6xa2B2v">Discord</a></p>
+</footer>
+
+<script src="scripts.js" defer></script>
+</body>
+</html>

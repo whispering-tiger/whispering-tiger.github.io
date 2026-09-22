@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whispering-tiger.github.io/sitemap.xml
